@@ -1,0 +1,8 @@
+on_http_request: # Hook or entrance point, for every new HTTP Request
+  - actions: # Define what to do when ^ happens
+      - type: basic-auth # Traffic Policy “Basic Authentication” Action
+        config: # Configuration for this specific action
+          realm: sample-realm # Label text that will be shown on the popup
+          credentials: # List of all accepted combinations
+            - user:password # Self-explanatory
+          enforce: true # How strictly is the action enforced, true=VERY
